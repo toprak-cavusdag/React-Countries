@@ -6,7 +6,7 @@
 }
 
 .main-container.dark .country-detail-container {
-  color: var(--color-white);
+  color: #ffff;
 }
 
 .back-button {
@@ -15,12 +15,12 @@
   text-decoration: none;
   border-radius: 1rem;
   box-shadow: 1px 5px 5px #cac7c7;
-  background-color: var(--color-white);
+  background-color: #ffff;
 }
 
 .main-container.dark .back-button {
   background-color: var(--dark-blue-elements);
-  color: var(--color-white);
+  color: #ffff;
   box-shadow: 5px 5px 10px 1px #0b0b0b;
 }
 
@@ -100,7 +100,8 @@
   cursor: pointer;
   text-decoration: none;
 }
+
 .main-container.dark .border-name {
   box-shadow: 5px 5px 10px 1px #0b0b0b;
-  color: var(--color-white);
+  color: #ffff;
 }

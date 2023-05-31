@@ -1,7 +1,7 @@
 .search-container {
   display: flex;
   align-items: center;
-  background-color: var(--color-white);
+  background-color: #ffff;
   width: 30%;
   padding: 1rem 2rem;
   border-radius: 1rem;
@@ -16,7 +16,7 @@
 }
 
 .main-container.dark .search-icon {
-  color: var(--color-white);
+  color: #ffff;
 }
 
 .search-container form {
@@ -34,11 +34,11 @@
 
 .main-container.dark .search-input {
   background-color: var(--dark-blue-elements);
-  color: var(--color-white);
+  color: #ffff;
 }
 
 .main-container.dark .search-input::placeholder {
-  color: var(--color-white);
+  color: #ffff;
 }
 
 .search-input:focus {

@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { searchByCode } from '../../redux/countriesSlice/CountriesAction';
+import { reset } from '../../redux/countriesSlice/CountriesSlice';
 
 const CountryDetail = () => {
   const { loading, error, countrySearch } = useSelector(
@@ -22,9 +23,9 @@ const CountryDetail = () => {
       console.log(error);
     }
 
-    // return () => {
-    //   dispatch(reset());
-    // };
+    return () => {
+      dispatch(reset());
+    };
   }, [dispatch, code, error]);
 
   return (

@@ -2,36 +2,42 @@ import './country.css';
 import { useState, useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { showAllCountries } from '../../redux/countriesSlice/CountriesAction';
-import { reset } from '../../redux/countriesSlice/CountriesSlice';
+import {
+  searchByRegion,
+  showAllCountries,
+} from '../../redux/countriesSlice/CountriesAction';
 import { Link } from 'react-router-dom';
 const Country = () => {
-  const { countriesData, loading, success, error } = useSelector(
+  const { countriesData, loading, success, error, region } = useSelector(
     (state) => state.country
   );
   const dispatch = useDispatch();
 
-  const [countryData, setCountryData] = useState([]);
+  // const [countryData, setCountryData] = useState([]);
 
   useEffect(() => {
     dispatch(showAllCountries());
 
-    if (success) {
-      setCountryData(countriesData);
+    // if (success) {
+    //   setCountryData(countriesData);
+    // }
+
+    if (region) {
+      dispatch(searchByRegion(region));
     }
 
     if (error) {
       console.log(error);
     }
-  }, [dispatch, error, success]);
+  }, [dispatch, error, success, region]);
 
   return (
     <section className='country-container'>
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        countryData.length > 0 &&
-        countryData.map((count, i) => {
+        countriesData.length > 0 &&
+        countriesData.map((count, i) => {
           return (
             <Link
               // onClick={() => dispatch(searchByName(item.cioc.toLowerCase()))}

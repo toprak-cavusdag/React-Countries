@@ -1,5 +1,5 @@
 .header {
-  background-color: var(--color-white);
+  background-color: #ffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,7 +10,7 @@
 .main-container.dark .header {
   background-color: var(--dark-blue-elements);
   box-shadow: 5px 5px 5px #0b0b0b;
-  color: var(--color-white);
+  color: #ffff;
 }
 
 .theme-light {
