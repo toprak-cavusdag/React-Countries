@@ -1,5 +1,5 @@
 import './country.css';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import {
@@ -8,19 +8,12 @@ import {
 } from '../../redux/countriesSlice/CountriesAction';
 import { Link } from 'react-router-dom';
 const Country = () => {
-  const { countriesData, loading, success, error, region } = useSelector(
-    (state) => state.country
-  );
+  const { countriesData, loading, success, error, region, searchTerm } =
+    useSelector((state) => state.country);
   const dispatch = useDispatch();
-
-  // const [countryData, setCountryData] = useState([]);
 
   useEffect(() => {
     dispatch(showAllCountries());
-
-    // if (success) {
-    //   setCountryData(countriesData);
-    // }
 
     if (region) {
       dispatch(searchByRegion(region));
@@ -31,20 +24,20 @@ const Country = () => {
     }
   }, [dispatch, error, success, region]);
 
+  const data = countriesData.filter((item) =>
+    item.name.common.toLowerCase().includes(searchTerm)
+  );
+
+  console.log(data);
   return (
     <section className='country-container'>
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        countriesData.length > 0 &&
-        countriesData.map((count, i) => {
+        data.length > 0 &&
+        data.map((count, i) => {
           return (
-            <Link
-              // onClick={() => dispatch(searchByName(item.cioc.toLowerCase()))}
-              className='country-card'
-              key={i}
-              to={`${count.cioc}`}
-            >
+            <Link className='country-card' key={i} to={`${count.cioc}`}>
               <img
                 src={count.flags.png}
                 alt={count.flags.alt}
