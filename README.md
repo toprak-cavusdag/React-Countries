@@ -1,5 +1,5 @@
 
-# Welcome to my React Countries Project
+# Welcome to my React Countries Project 🌍
 
 You can watch the Project here [live]: https://toprak-cavusdag-react-countries.netlify.app/
 
