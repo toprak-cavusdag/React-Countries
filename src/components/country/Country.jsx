@@ -34,8 +34,8 @@ const Country = () => {
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        data.length > 0 &&
-        data.map((count, i) => {
+        countriesData.length > 0 &&
+        countriesData.map((count, i) => {
           return (
             <Link className='country-card' key={i} to={`${count.cioc}`}>
               <img

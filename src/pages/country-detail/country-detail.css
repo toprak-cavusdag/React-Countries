@@ -1,6 +1,7 @@
 .country-detail-container {
+  box-sizing: border-box;
   margin-top: 2rem;
-  padding: 5rem;
+  padding: 4rem;
   width: 100%;
   height: 100vh;
 }
@@ -66,9 +67,7 @@
   margin-left: 4px;
 }
 
-.detail-right {
-  min-width: 100%;
-}
+
 
 .detail-right p {
   margin-bottom: 1rem;
